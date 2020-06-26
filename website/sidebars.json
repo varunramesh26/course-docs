@@ -1,0 +1,10 @@
+{
+  "docs": {
+    "Coursework": ["coursework"],
+    "Contents": ["contents"],
+    "Resources": ["resources"]
+  },
+  "docs-other": {
+    "First Category": ["", ""]
+  }
+}
