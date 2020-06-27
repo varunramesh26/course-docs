@@ -1,6 +1,6 @@
 ---
 id: coursework
-title: LyCS101
+title: LY-CS101
 ---
 
 ## Coursework
@@ -9,7 +9,7 @@ A fundamental computer science coursework for undergraduate students.
 
 ## About the coursework
 
-This coursework _**Ly-CS101**_ covers the fundamental concepts of programming, thereby assist the students to think like a computer scientist.
+This coursework _**LY-CS101**_ covers the fundamental concepts of programming, and assist the students to think like a computer scientist.
 
 #### Coursework contains two modules:
 
@@ -22,5 +22,4 @@ This coursework _**Ly-CS101**_ covers the fundamental concepts of programming, t
 
 * The students of computer science not only needs to have a good understanding of the programming languages, also know how to use various tools to build a better app, and maintain their personal brand.
 
-* The students should develop a programmer's mindset to solve the issue at hand, if at all one gets stuck with any problem while learning or while building an app.
-
+* The students should develop a programmer's mindset to solve the issue at hand, if at all one faces any problem while learning or while building an app.
