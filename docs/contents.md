@@ -14,8 +14,8 @@ Since, the coursework is divided into two modules:
 the two modules are further divided into actual contents:
 1. Fundamentals
     1. Programming Basics in Python - _**[Python Notes](https://colab.research.google.com)**_
-    2. Fundamentals of OS - [click](week3)
-    3. Basics of Terminal
+    2. Fundamentals of OS - [OS Slides](https://docs.google.com/presentation/d/13UcAkVzmiPzW1Cyo7wRl51DJvaPu93e72ZyxdYqlAyM/edit#slide=id.gc6f90357f_0_0)
+    3. Basics of Terminal - [Working With Editors](week3)
     4. Fundamentals of Networking
     5. Basics of Databases
     6. Talks on Personal Branding
