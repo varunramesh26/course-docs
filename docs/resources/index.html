@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Resources · Lyceum Coursework</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Resources being Used"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Resources · Lyceum Coursework"/><meta property="og:type" content="website"/><meta property="og:url" content="https://lyceum-eot.github.io//course-docs/"/><meta property="og:description" content="## Resources being Used"/><meta property="og:image" content="https://lyceum-eot.github.io//course-docs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://lyceum-eot.github.io//course-docs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/course-docs/undefined"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/course-docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/course-docs/css/main.css"/><script src="/course-docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/course-docs/"><h2 class="headerTitle">Lyceum Coursework</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/course-docs/docs/coursework" target="_self">Coursework</a></li><li class="siteNavGroupActive"><a href="/course-docs/docs/contents" target="_self">Contents</a></li><li class="siteNavGroupActive siteNavItemActive"><a href="/course-docs/docs/resources" target="_self">Resources</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Resources</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Coursework</h3><ul class=""><li class="navListItem"><a class="navItem" href="/course-docs/docs/coursework">LY-CS101</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Contents</h3><ul class=""><li class="navListItem"><a class="navItem" href="/course-docs/docs/contents">Contents</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Resources</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/course-docs/docs/resources">Resources</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Working With Editors</h3><ul class=""><li class="navListItem"><a class="navItem" href="/course-docs/docs/week3">Working with Editors [Week 3 Session]</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Resources</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="resources-being-used"></a><a href="#resources-being-used" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resources being Used</h2>
+<blockquote>
+<p>The following are few Open Source platforms and tools used throughout the course, and thereby encouraging students to use Open Source softwares.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="for-online-classes"></a><a href="#for-online-classes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>For Online Classes</h2>
+<p>To conduct the classes <em><strong><a href="https://bigbluebutton.org/">BigBlueButton</a></strong></em>, an Open Source app is being used.</p>
+<p>The BBB comes with various tools for moderators and students such as:</p>
+<ul>
+<li>Online shared whiteboard</li>
+<li>Common notes</li>
+<li>Chat during the online class</li>
+<li>Including multiple ppts in a single session</li>
+<li>Online polls during the class</li>
+<li>Converting class to Video conferencing</li>
+<li>Breakout room</li>
+</ul>
+<p>Watch the moderators user overview video - <em><strong><a href="https://youtu.be/Q2tG2SS4gXA">YouTube link</a></strong></em></p>
+<p>Watch the students user overview video - <em><strong><a href="https://youtu.be/uYYnryIM0Uw">YouTube link</a></strong></em></p>
+<h2><a class="anchor" aria-hidden="true" id="assigments"></a><a href="#assigments" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Assigments</h2>
+<p>Weekly assignments are provided to the students for them to better understand, and also get their feet wet by solving and practice what is being taught.</p>
+<p>For weekly assignments we're using <em><strong><a href="https://classroom.github.com/">GitHub Classroom</a></strong></em>.</p>
+<p>Assignment workflow:</p>
+<ul>
+<li>Assignments will be provided with a boilerplate code.</li>
+<li>Students upon accepting the invitation of the assignment, GitHub classroom automatically creates a repo for them.</li>
+<li>After which the students need to solve the assignment using online code editors or on their local repos.</li>
+<li>At last, the instructors would evaluate the assignment and provide remarks.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="forum"></a><a href="#forum" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Forum</h2>
+<p>The forum is used for issues pertaining a specific problem or an error faced by a student. Where one can share the issue, and the instructors or other community members address them.</p>
+<p><em><strong><a href="https://www.discourse.org">Discourse</a></strong></em> is one such Open Source platform that we've setup for the same.</p>
+<h2><a class="anchor" aria-hidden="true" id="chat-application"></a><a href="#chat-application" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Chat Application</h2>
+<p>The students and the instructors can collectively use the chat app for general discussions regarding any topic in Computer Science. Thereby keeping in touch with the students, and effectively communicate with one another.</p>
+<p>For the same <em><strong><a href="https://zulipchat.com">Zulip</a></strong></em>, an Open Source real-time chat application is being used.</p>
+<h2><a class="anchor" aria-hidden="true" id="material-sharing--online-editors"></a><a href="#material-sharing--online-editors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Material Sharing &amp; Online Editors</h2>
+<p>The complete materials for the coursework is being shared using <em><strong><a href="https://colab.research.google.com">Google Colab</a></strong></em>. It is similar to Jupyter Notebooks.</p>
+<ul>
+<li>Using which one can access the content of the coursework.</li>
+<li>It serves as an online code editor, where one can write and execute Python programs.</li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/course-docs/docs/contents"><span class="arrow-prev">← </span><span>Contents</span></a><a class="docs-next button" href="/course-docs/docs/week3"><span>Working with Editors [Week 3 Session]</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#resources-being-used">Resources being Used</a></li><li><a href="#for-online-classes">For Online Classes</a></li><li><a href="#assigments">Assigments</a></li><li><a href="#forum">Forum</a></li><li><a href="#chat-application">Chat Application</a></li><li><a href="#material-sharing--online-editors">Material Sharing &amp; Online Editors</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/course-docs/" class="nav-home"></a><div><h5>Community</h5><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Discord</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2020 Lyceum</section></footer></div></body></html>

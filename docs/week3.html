@@ -1,0 +1,456 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Working with Editors [Week 3 Session] · Lyceum Coursework</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Text Editors and IDEs"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Working with Editors [Week 3 Session] · Lyceum Coursework"/><meta property="og:type" content="website"/><meta property="og:url" content="https://lyceum-eot.github.io//course-docs/"/><meta property="og:description" content="## Text Editors and IDEs"/><meta property="og:image" content="https://lyceum-eot.github.io//course-docs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://lyceum-eot.github.io//course-docs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/course-docs/undefined"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/course-docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/course-docs/css/main.css"/><script src="/course-docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/course-docs/"><h2 class="headerTitle">Lyceum Coursework</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/course-docs/docs/coursework" target="_self">Coursework</a></li><li class="siteNavGroupActive"><a href="/course-docs/docs/contents" target="_self">Contents</a></li><li class="siteNavGroupActive"><a href="/course-docs/docs/resources" target="_self">Resources</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Working With Editors</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Coursework</h3><ul class=""><li class="navListItem"><a class="navItem" href="/course-docs/docs/coursework">LY-CS101</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Contents</h3><ul class=""><li class="navListItem"><a class="navItem" href="/course-docs/docs/contents">Contents</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Resources</h3><ul class=""><li class="navListItem"><a class="navItem" href="/course-docs/docs/resources">Resources</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Working With Editors</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/course-docs/docs/week3">Working with Editors [Week 3 Session]</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Working with Editors [Week 3 Session]</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="text-editors-and-ides"></a><a href="#text-editors-and-ides" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Text Editors and IDEs</h2>
+<p>Text editors are applications that are used to write the source code. It comes with an user interface to write the code in it, and save it back at a location specified.</p>
+<blockquote>
+<p>Examples: <em>Vim, Neovim, Emacs, Nano, Sublime-Text, Notepad++, Brackets etc.,</em></p>
+</blockquote>
+<p>Integrated Development Environment (IDE) provides multiple tools like a text editor to write the source code, build automation tools to compile or build the program written, source code execution tool, debugger to inspect the errors, and many more features.</p>
+<blockquote>
+<p>Examples: <em>Visual Studio IDE, Visual Studio Code, Geany, Netbeans, Eclipse, IntelliJ, Pycharm, RStudio, etc.,</em></p>
+</blockquote>
+<p>Some of the text editors like <em>Vim</em> or <em>Sublime</em> can be extended to use it like an IDE, which will be much more lightweight on the system resources.</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="using-vim"></a><a href="#using-vim" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using VIM</h2>
+<p>VIM is an improved version of Vi text editor, highly configurable which makes the workflow efficient. To open a VIM instance enter <strong>vim</strong> at the prompt(&quot;$&quot; or &quot;#&quot;) in a terminal (assuming that VIM is installed on your system).</p>
+<h3><a class="anchor" aria-hidden="true" id="installing--verifying-vim"></a><a href="#installing--verifying-vim" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installing &amp; Verifying VIM</h3>
+<p>To install <strong>VIM</strong> on <em>Ubuntu</em> or <em>Ubuntu</em> based distros (operating systems) like <em>Mint</em>, or <em>Windows Subsystem for Linux</em>, please use the following command:</p>
+<pre><code class="hljs css language-terminal"><span class="hljs-variable">$sudo</span> apt-<span class="hljs-builtin-name">get</span> install vim
+</code></pre>
+<p>More on <strong>apt-get</strong> <a href="http://manpages.ubuntu.com/manpages/xenial/man8/apt-get.8.html">click here</a>, or go to <strong>man apt-get</strong> through terminal.</p>
+<p>To install <strong>VIM</strong> on <em>Arch Linux</em> based distros (operating systems) like <em>Manjaro</em>, use the following command:</p>
+<pre><code class="hljs css language-terminal"><span class="hljs-meta"><span class="hljs-meta-keyword">$sudo</span> pacman -S vim</span>
+</code></pre>
+<p>More about pacman <a href="https://www.archlinux.org/pacman/pacman.8.html">click here</a>, or go to <strong>man pacman</strong> through the terminal.</p>
+<p>To verify <strong>VIM</strong> installation:</p>
+<pre><code class="hljs css language-terminal"><span class="hljs-meta"><span class="hljs-meta-keyword">$vim</span></span>
+</code></pre>
+<p>which opens up a vim editor like this:</p>
+<p><img src="/course-docs/docs/assets/vim-editor.png" alt="VIM-Editor"></p>
+<h3><a class="anchor" aria-hidden="true" id="how-to-navigate-in-vim"></a><a href="#how-to-navigate-in-vim" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to Navigate in VIM.</h3>
+<p>To move around in VIM, across the lines, or from left to right, or vice versa use the following keys in the <strong>NORMAL</strong> mode.</p>
+<ul>
+<li><strong>j</strong> - down</li>
+<li><strong>k</strong> - up</li>
+<li><strong>h</strong> - left</li>
+<li><strong>l</strong> - right</li>
+</ul>
+<p>Similar to the arrow keys:</p>
+<p><img src="/course-docs/docs/assets/vim-navigation.png" alt="VIM-Navigation"></p>
+<h3><a class="anchor" aria-hidden="true" id="four-major-vim-modes"></a><a href="#four-major-vim-modes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Four Major VIM modes:</h3>
+<ul>
+<li>Normal Mode</li>
+<li>Insert Mode</li>
+<li>Visual Mode</li>
+<li>Replace Mode</li>
+</ul>
+<ol>
+<li><p><strong>Normal Mode:</strong>
+In this mode we can use VIM editor commands by pressing <strong>&quot;:&quot;</strong>. One can move around the editor while being in this mode.</p></li>
+<li><p><strong>Insert Mode:</strong>
+To get into insert mode press <strong>i</strong> in Normal Mode, and <em>--INSERT--</em> will be displayed at the bottom of the editor. Only through this mode a user can write the something in VIM. To quit out of the insert mode press <strong>&quot;ESC&quot;</strong> key.</p>
+<p><img src="/course-docs/docs/assets/insert-mode.png" alt="Insert Mode"></p></li>
+<li><p><strong>Visual Mode:</strong>
+This mode is used to highlight an area of code, which can be later copied or modified. To use this mode press <strong>&quot;v&quot;</strong> while in Normal mode, and it dispays <em>--VISUAL--</em> at the bottom.
+Visual line mode highlights the lines, press <strong>&quot;SHIFT+V&quot;</strong>. It displays <em>--VISUAL LINE--</em> at the bottom.
+Visual block mode highlights blockwise, press <strong>&quot;CTRL+V&quot;</strong>. It displays <em>--VISUAL BLOCK--</em>.</p>
+<p><img src="/course-docs/docs/assets/visual-mode.png" alt="Visual Mode"></p></li>
+<li><p><strong>Replace Mode:</strong>
+This is a special kind of insert mode, where it deletes the characters under the cursor, and replaces whatever we enter. To enter into replace mode press <strong>&quot;SHIFT+R&quot;</strong>. It displays <em>--REPLACE--</em> at the bottom of the editor.</p>
+<p><img src="/course-docs/docs/assets/replace-mode.png" alt="Replace Mode"></p></li>
+</ol>
+<p><strong>NOTE:</strong> To exit any mode and return to NORMAL mode press <strong>&quot;ESC&quot;</strong>.</p>
+<ol start="5">
+<li><p><strong>Command-Line Mode:</strong>
+This is where one enters the commands. To enter this mode simply press <strong>colon(:)</strong>.</p>
+<p><img src="/course-docs/docs/assets/cmd-mode.png" alt="Command Mode"></p></li>
+</ol>
+<ul>
+<li><strong>:w</strong> - saves the appended text or modified text into the file</li>
+<li><strong>:q</strong> - quits the VIM text editor</li>
+<li><strong>:q!</strong> - discards the changes made, and quits the VIM text editor</li>
+<li><strong>:wq</strong> - saves the changes and quits the VIM text editor</li>
+<li><strong>:50</strong> - jumps to the specified line number i.e. 50 here</li>
+<li><strong>:his</strong> - lists out the history of commands that was used previously</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="search-pattern-and-replace-commands"></a><a href="#search-pattern-and-replace-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Search Pattern and Replace Commands:</h4>
+<ul>
+<li><strong>/search-pattern</strong> - searches for the pattern passed after <strong>&quot;/&quot;</strong></li>
+<li><strong>:%s/search-pattern/replacement</strong> - searches for the <em>search-pattern</em>, and replaces all the instances of it with <em>replacement</em> string.</li>
+<li><strong>:%s/search-pattern/replacement/gc</strong> - matches the <em>search-pattern</em>, starts replacing it with a <em>replacement</em> pattern, and asks for confirmation at every instance of the search-pattern found.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="operators"></a><a href="#operators" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Operators:</h4>
+<p>The operators are used to manipulate the code or the text. Use these commands in NORMAL mode.</p>
+<ul>
+<li><strong>d</strong> - delete the highlighed area</li>
+<li><strong>y</strong> - yank or copy the highlighted area</li>
+<li><strong>p</strong> - paste the last deleted area or the yanked code after the cursor</li>
+<li><strong>r</strong> - replace a character under the cursor</li>
+<li><strong>u</strong> - undo the last modification</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="motion-operators"></a><a href="#motion-operators" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Motion Operators:</h4>
+<p>It provides context to the operators, or the cursor jumps multiple words or to the EOF. These can be combined with the above operators.</p>
+<ul>
+<li><p><strong>w</strong> - jumps to the first character or the start of next word</p></li>
+<li><p><strong>e</strong> - jumps to the last character or the ending of next word</p></li>
+<li><p><strong>b</strong> - jumps to the beginning of previous word</p></li>
+<li><p><strong>$</strong> - jumps to the end of line</p></li>
+<li><p><strong>0</strong> - jumps to the beginning of a line</p></li>
+<li><p><strong>gg</strong> - jumps to the beginning of the file</p></li>
+<li><p><strong>G</strong> - jumps to the end of the file</p></li>
+<li><p><strong>}</strong> - jumps to beginning of next paragraph</p></li>
+<li><p><strong>{</strong> - jumps to end of the paragraph</p>
+<p>Deleting a word:</p>
+<ul>
+<li><strong>dw</strong> - deletes a word starting from the cursor until the next word</li>
+<li><strong>de</strong> - deletes a word starting from the cursor until the end of the word</li>
+<li><strong>d5w</strong> - deletes 5 words starting from the cursor</li>
+<li><strong>d4b</strong> - deletes 4 previous words starting from the cursor</li>
+<li><strong>d$</strong> - deletes the words from the cursor until the line ends</li>
+<li><strong>d3$</strong> - deletes 3 lines after the cursor position.</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="search--highlight-patterns"></a><a href="#search--highlight-patterns" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Search &amp; Highlight patterns</h4>
+<ul>
+<li><strong>/word_to_be_highlighted</strong> - highlights all the words or patterns matching <em>word_to_be_highlighted</em> string</li>
+<li><strong>n</strong> - to move to the next search match</li>
+<li><strong>N</strong> - to move to the previous search match</li>
+<li><strong>:noh</strong> - is used to clear the last search pattern highlighting</li>
+</ul>
+<p><strong>NOTE:</strong></p>
+<ul>
+<li><p>For further help use <strong>&quot;:help&quot;</strong> command in VIM, it brings up the manual for VIM.</p>
+<p><img src="/course-docs/docs/assets/vim-help.png" alt="VIM Help"></p>
+<p><img src="/course-docs/docs/assets/help-page.png" alt="Help page"></p></li>
+<li><p>For practicing how to use VIM, please refer to the <strong>vimtutor</strong> section in the VIM manual.
+In the above page, place your cursor on <strong>vimtutor</strong> highlighted in blue color, and then press <strong>CTRL+]</strong>, which opens up the vim tutorial:</p>
+<p><img src="/course-docs/docs/assets/vim-tutor.png" alt="VIM Tutorial"></p>
+<p>Follow the instructions, and learn how to use VIM effectively.</p></li>
+</ul>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="writing-a-bash-script"></a><a href="#writing-a-bash-script" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Writing a Bash Script</h2>
+<p>Bash script is a file containing bash commands, which will be executed through the command line, or at the time of a particular event being triggered.</p>
+<h3><a class="anchor" aria-hidden="true" id="how-to-write-a-bash-script"></a><a href="#how-to-write-a-bash-script" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to write a bash script</h3>
+<ol>
+<li><p>Firstly, we need bash, make sure it is installed on your systems. You can verify it by entering  <strong>&quot;bash --help&quot;</strong> on your terminal.</p>
+<p><strong>NOTE:</strong> Windows users need to install <em>Windows Subsystem for Linux</em>, here is the link - <strong><a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">click here</a></strong></p></li>
+<li><p>Next we need an editor like <em>VIM</em> or <em>Sublime-Text</em> (any text editor would suffice). Open the text editor by using the following command with the file name:</p>
+<pre><code class="hljs css language-terminal"><span class="hljs-meta"><span class="hljs-meta-keyword">$vim</span> hello.sh</span>
+</code></pre>
+<p>In here <strong>hello.sh</strong> is the filename with an extension <strong>.sh</strong>.</p></li>
+<li><p>The file will be opened in VIM, you can write a bash script similar to the following code:</p>
+<pre><code class="hljs css language-bash"><span class="hljs-comment">#!/bin/bash                     # this is shebang</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">"Hello, <span class="hljs-variable">$(whoami)</span>!"</span>        <span class="hljs-comment"># display message</span>
+</code></pre>
+<ul>
+<li>Here, the first line is called <strong>shebang</strong>, that indicates it is a bash script, which will be recognized by the bash interpreter at the execution time.</li>
+<li>In the second line, <strong>&quot;echo&quot;</strong> command is similar to print statement, that reproduces the specified output.</li>
+<li><strong>#</strong> indicates the <strong>commented line</strong> for better understanding of what a particular statement does.</li>
+</ul></li>
+<li><p>After the above step, save the file with the following command that is to be executed inside VIM in the NORMAL mode:</p>
+<pre><code class="hljs css language-vim">:<span class="hljs-keyword">wq</span>
+</code></pre>
+<p><img src="/course-docs/docs/assets/hello-script.png" alt="hello.sh Bash Script"></p>
+<p>Here, the command <strong>:wq</strong> is used in the vim to save and exit the file.</p></li>
+<li><p>Now, make this bash script <em>hello.sh</em> executable:</p>
+<pre><code class="hljs css language-terminal"><span class="hljs-meta"><span class="hljs-meta-keyword">$chmod</span> +x hello.sh</span>
+</code></pre>
+<p>In here, <strong>chmod</strong> command makes the file <strong>hello.sh</strong> executable by using the option: <strong>+x</strong>.</p>
+<p><strong>chmod</strong> command is used to give or retrieve permissions to any file on linux systems. For more information please refer to <strong>man chmod</strong> at the prompt.</p></li>
+<li><p>Finally, we can execute this bash script using the following command:</p>
+<pre><code class="hljs css language-terminal">$./hello.sh
+</code></pre>
+<p>or use <strong>bash</strong> command:</p>
+<pre><code class="hljs css language-terminal"><span class="hljs-meta"><span class="hljs-meta-keyword">$bash</span> hello.sh</span>
+</code></pre>
+<ul>
+<li><strong>&quot;./&quot;</strong> or <strong>&quot;bash&quot;</strong> command specifies the bash interpreter to execute <em>hello.sh</em></li>
+</ul>
+<p><img src="/course-docs/docs/assets/hello-execution.png" alt="hello.sh Execution"></p></li>
+</ol>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="bash-script-to-retrieve-data-about-indias-current-covid-19-cases"></a><a href="#bash-script-to-retrieve-data-about-indias-current-covid-19-cases" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bash Script to Retrieve Data About India's Current COVID-19 Cases</h3>
+<p>You can follow the above steps to write the following bash script and save it with a filename similar to <em>corona_india.sh</em></p>
+<pre><code class="hljs css language-bash"><span class="hljs-meta">#!/bin/sh</span>
+curl -s https://corona-stats.online/india &gt; ~/.cache/corona             <span class="hljs-comment"># curl retrieves the data from the API &amp; stores it in ~/.cache/corona</span>
+grep <span class="hljs-string">"India"</span> ~/.cache/corona |                                          <span class="hljs-comment"># grep matches the pattern "India" in the file ~/.cache/corona</span>
+    sed <span class="hljs-string">"s/\s//g ; s/║/;/g; s/│/;/g"</span> |                        <span class="hljs-comment"># sed filters or removes the whitespaces, | symbols from the grep command</span>
+    awk -F<span class="hljs-string">';'</span> <span class="hljs-string">'{print "Total cases: " $4 " | Deaths: " $6 " | Active cases: "$9""}'</span>     <span class="hljs-comment"># awk prints the data in a formatted manner.</span>
+</code></pre>
+<ol>
+<li><p>In first line we're using <strong>curl</strong> command to retrieve data from the API <a href="https://corona-stats.online/india">https://corona-stats.online/india</a> and then stores it in the file <em>~/.cache/corona</em></p>
+<p><strong>NOTE:</strong> You can use any path to save the data, be it on your root directory or your home directory, instead of <em>~/.cache/</em></p>
+<pre><code class="hljs css language-bash">curl -s https://corona-stats.online/india &gt; ~/.cache/corona
+...
+</code></pre>
+<ul>
+<li><strong>&quot;&gt;&quot;</strong> redirects the output of <strong>curl</strong> command to the file <em>~/.cache/corona</em></li>
+</ul>
+<p>This is how the curl command retrieves the data if you run it at the prompt:</p>
+<p><img src="/course-docs/docs/assets/curl-cmd.png" alt="curl command"></p></li>
+<li><p>In the second line, <strong>grep</strong> command is used to retrieve only the record containing India's stats on COVID-19:</p>
+<pre><code class="hljs css language-bash">...
+grep <span class="hljs-string">"India"</span> ~/.cache/corona |
+...
+</code></pre>
+<ul>
+<li>Here, we're retrieving data that is stored in the file <em>~/.cache/corona</em></li>
+<li>At the end piping <strong>&quot;|&quot;</strong> symbol is used which just combines multiple commands, or simply redirects the standard output of one command to another</li>
+<li>So, the grep command is redirected to the following commands after <strong>&quot;|&quot;</strong></li>
+</ul>
+<p>Here, you can see how <strong>grep</strong> command retrives only the stats about India's COVID-19 data:
+<img src="/course-docs/docs/assets/grep-cmd.png" alt="grep command"></p></li>
+<li><p>The third line contains the <strong>sed</strong> command that filters out or removes unwanted characters:</p>
+<pre><code class="hljs css language-bash">...
+sed <span class="hljs-string">"s/\s//g ; s/║/;/g; s/│/;/g"</span> |
+...
+</code></pre>
+<ul>
+<li>Here <strong>&quot;s/&quot;</strong> is used to replace or substitue the following</li>
+<li>next <strong>&quot;\s&quot;</strong> refers to the whitespaces, that will be removed</li>
+<li><strong>&quot;//g&quot;</strong> is to specify that it has to removes all the whitespaces i.e. globally</li>
+<li><strong>&quot;;&quot;</strong> is the delimiter that replaces the whitespaces or the piping(|) symbols that are seen in the previous <strong>grep</strong> command</li>
+<li>Similarly after the first <strong>&quot;;&quot;</strong>, we're removing <strong>&quot;||&quot;</strong> and substituting it with <strong>&quot;;&quot;</strong></li>
+<li>At last <strong>&quot;|&quot;</strong> is being substituted again with <strong>&quot;;&quot;</strong></li>
+<li>Finally we pass the whole filter that is inside the double quotes(&quot;...&quot;) to the next command using the piping symbol <strong>|</strong></li>
+</ul>
+<p>This is how sed command replaces those characters with <strong>&quot;;&quot;</strong></p>
+<p><img src="/course-docs/docs/assets/sed-cmd.png" alt="sed command"></p></li>
+<li><p>Finally, awk command is used to format the output with only the required data to be printed:</p>
+<pre><code class="hljs css language-bash">...
+awk -F<span class="hljs-string">';'</span> <span class="hljs-string">'{print "Total cases: " $4 " | Deaths: " $6 " | Active cases: "$9""}'</span>
+...
+</code></pre>
+<ul>
+<li>Here <strong>&quot;-F&quot;</strong> acts as a separator which recognises the delimiter <strong>&quot;;&quot;</strong> from the previous <strong>sed</strong> command, and only grabs the data fields that are specified in this <strong>awk</strong> command</li>
+<li><strong>&quot;$4&quot;</strong> grabs the 4th data field, the first data field being before the first semicolon(<strong>;</strong>)</li>
+</ul>
+<p>Here's the final output of the whole script:</p>
+<p><img src="/course-docs/docs/assets/awk-cmd.png" alt="awk command"></p></li>
+<li><p>One can run this <em>corona_india.sh</em> bash script , similar to the previous script being executed after making it executable:</p>
+<pre><code class="hljs css language-terminal"><span class="hljs-meta"><span class="hljs-meta-keyword">$chmod</span> +x corona.sh</span>
+<span class="hljs-symbol">$</span>./corona.sh
+</code></pre>
+<p><img src="/course-docs/docs/assets/corona-script.png" alt="corona_india.sh script"></p></li>
+</ol>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="writing-a-c-file-and-executing-it-using-gcc-compiler"></a><a href="#writing-a-c-file-and-executing-it-using-gcc-compiler" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Writing a C File and Executing it Using GCC Compiler</h2>
+<p>To write a C file we can use the same <strong>VIM text editor</strong>, compile the program, and then finally execute it on the teminal.</p>
+<h3><a class="anchor" aria-hidden="true" id="heres-a-palindrome-program-in-c"></a><a href="#heres-a-palindrome-program-in-c" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Here's a Palindrome Program in C:</h3>
+<pre><code class="hljs css language-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string.h&gt;</span></span>
+
+<span class="hljs-comment">// this is the main function</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">char</span> input_string[<span class="hljs-number">100</span>]; <span class="hljs-comment">//initialising an array of size 100</span>
+    <span class="hljs-keyword">int</span> i, length; <span class="hljs-comment">// initialising two integer variables -&gt; a and length</span>
+    <span class="hljs-keyword">int</span> flag = <span class="hljs-number">0</span>; <span class="hljs-comment">// initialising an integer flag to 0</span>
+
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Enter a string: "</span>); <span class="hljs-comment">// printing this string on the screen</span>
+    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%s"</span>, input_string); <span class="hljs-comment">// we read the input from the screen</span>
+
+    length = <span class="hljs-built_in">strlen</span>(input_string); <span class="hljs-comment">// length of the array</span>
+
+    <span class="hljs-comment">// looping over the length of the array</span>
+    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i &lt; length ;i++){
+    <span class="hljs-comment">// checking if the ith char and its correspding character from the string's right side are not the same.</span>
+    <span class="hljs-comment">// For example, if the input string is `bangalore`, length of bangalore is 9</span>
+    <span class="hljs-comment">// if i=0 -&gt; bangalore[0] is `b` and bangalore[length-i-1] = bangalore[9-0-1] = bangalore[8] = bangalore[8] is `e`.</span>
+    <span class="hljs-comment">// since bangalore[0] -&gt; `b` is not equal to bangalore[8] -&gt; `e`, the flag will be set to 1 and breaks out of the loop.</span>
+        <span class="hljs-keyword">if</span>(input_string[i] != input_string[length-i<span class="hljs-number">-1</span>]){
+        <span class="hljs-comment">// setting flag to 1</span>
+            flag = <span class="hljs-number">1</span>;
+        <span class="hljs-comment">// break out of the loop</span>
+            <span class="hljs-keyword">break</span>;
+    }
+    }
+    <span class="hljs-comment">// if flag is 1, we know it from the previous loop that its not a palindrome</span>
+    <span class="hljs-keyword">if</span> (flag) {
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%s is not a palindrome\n"</span>, input_string);
+    }
+    <span class="hljs-comment">// else if flag is 0, print that the input string is a palindrome</span>
+    <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%s is a palindrome\n"</span>, input_string);
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p><strong>NOTE:</strong> The lines or statements after <strong>&quot;//&quot;</strong> are comments that is for understanding what that particular statement does, and won't be executed by the compiler.</p>
+<ol>
+<li><p>First two lines being the header files:</p>
+<pre><code class="hljs css language-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string.h&gt;</span></span>
+...
+</code></pre>
+<ul>
+<li><strong>stdio.h</strong> contains definition for input and output operations like <strong>printf</strong> and <strong>scanf</strong></li>
+<li><strong>string.h</strong> contains some string methods like <strong>strlen()</strong></li>
+</ul></li>
+<li><p>Next comes the <strong>main()</strong> function being the first function that the compiler searches for, before any other function:</p>
+<pre><code class="hljs css language-c">...
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+...
+}
+</code></pre>
+<p>Here, we're specifying the main() function to return integer value</p></li>
+<li><p>Initializing and declaring variables or arrays:</p>
+<pre><code class="hljs css language-c">...
+<span class="hljs-keyword">char</span> input_string[<span class="hljs-number">100</span>];
+<span class="hljs-keyword">int</span> i, length;
+<span class="hljs-keyword">int</span> flag = <span class="hljs-number">0</span>;
+...
+</code></pre>
+<ul>
+<li><strong>char</strong> datatype is used to declare the <strong>input_string[100]</strong> of the type character, and the array length being 100</li>
+<li><strong>int</strong> datatype is used to declare the variables <strong>i</strong> and <strong>length</strong> that will be used in the following lines of code</li>
+<li><strong>flag</strong> is intialized to 0, acts like a <strong>boolean values (true or false)</strong>, here we'll be using <strong>0</strong> and <strong>1</strong> to determine the condition that we'll be testing</li>
+</ul></li>
+<li><p>A prompt to accept an input string:</p>
+<pre><code class="hljs css language-c">...
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Enter a string:"</span>);
+<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%s"</span>, input_string);
+length = <span class="hljs-built_in">strlen</span>(input_string);
+...
+</code></pre>
+<ul>
+<li>first statement prints a message on the screen</li>
+<li><strong>scanf</strong> accepts the input from the user, <strong>&quot;%s&quot;</strong> specifies the input as a string, and stores it in the array <strong>input_string</strong></li>
+<li>then determine the length of the array using the <strong>strlen()</strong> function, and assign the value to the variable <strong>length</strong></li>
+<li><em>for ex:</em> <strong>input_string = madam</strong>, the <strong>length = 5</strong></li>
+</ul></li>
+<li><p>for loop to iterate through the characters of input_string array:</p>
+<pre><code class="hljs css language-c">...
+<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>; i &lt; length; i++)
+{
+    ...
+    ...
+}
+...
+</code></pre>
+<ul>
+<li><strong>for loop</strong> is used to iterate through the array <strong>input_string</strong> which contains the input accepted from the user.</li>
+<li>for loop syntax: <strong>for(intialization; test-condition; updation)</strong></li>
+<li><em>for ex:</em> <strong>input_array = madam</strong>, each of the character in the string <strong>madam</strong> is given an index postion, which starts from 0.</li>
+<li>characters assigned with the index positions: <strong>m = 0, a = 1, d = 2, a = 3, m = 4</strong></li>
+<li>hence, we the intialization starts with <strong>i = 0</strong></li>
+<li>and it loops until it reaches last index position 4 being the character <strong>&quot;m&quot;</strong>.</li>
+<li><strong>i++</strong> increments with 1 at each loop.</li>
+<li>when the value of <strong>i</strong> increments to 6 (i = 6), the condition <strong>i &lt; length</strong> fails, because <strong>i</strong> is not less than the variable <strong>length</strong> (length = 5).</li>
+</ul></li>
+<li><p>Logic to test the given string is palindrome or not:</p>
+<pre><code class="hljs css language-c">...
+<span class="hljs-keyword">if</span>(input_string[i] != input_string[length-i<span class="hljs-number">-1</span>])
+{
+    flag = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">break</span>;
+...
+</code></pre>
+<ul>
+<li>this logic works inside the for loop, at each iteration, i.e, for every character of the <strong>input_string</strong> array.</li>
+<li><em>for ex:</em> if(madam[0] != madam[5-0-1]) -&gt; if(m != m)</li>
+<li>which fails the test condition, and the flag statement won't be executed.</li>
+<li>and loops until the if condition satisfies, in this example, for madam array, it never sets the flag to 1.</li>
+<li>Hence, the flag will always be set to 0 in this madam example.</li>
+<li><em>for ex:</em> input_string = bangalore</li>
+<li>then, if(bangalore[0] != bangalore[9-0-1] -&gt; if(b != e)</li>
+<li>in this example the test condition is satisftied at the first iteration itself.</li>
+<li>Now, the flag will be set to 1, i.e, <strong>flag = 1</strong> statement inside the if condition is executed.</li>
+<li>Next statement being <strong>break</strong>, breaks out of the <strong>for loop</strong>, and jumps straight to the very next statements outside the for loop.</li>
+</ul></li>
+<li><p>Display message to inform the user if the <strong>input_string</strong> is palindrome or not:</p>
+<pre><code class="hljs css language-c">...
+<span class="hljs-keyword">if</span> (flag)
+{
+     <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%s is not a palindrome\n"</span>, input_string);
+ }
+ <span class="hljs-keyword">else</span>
+ {
+     <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%s is a palindrome\n"</span>, input_string);
+ }
+ <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+...
+</code></pre>
+<ul>
+<li>from the previous test condition the <strong>flag = 0</strong>, in <strong>input_string = madam</strong> example</li>
+<li>then the compiler prints the <strong>else part</strong>, i.e., <em>&quot;madam is a palindrome&quot;</em></li>
+<li>when the <strong>input_string = bangalore</strong>, the flag was set to be 1 (i.e. flag = 1)</li>
+<li>then the compiler prints the <strong>if part</strong>, i.e, <em>&quot;bangalore is not a palindrome&quot;</em></li>
+</ul></li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="steps-to-compile--execute-the-c-program"></a><a href="#steps-to-compile--execute-the-c-program" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Steps to Compile &amp; Execute the C Program</h3>
+<p>For compiling the C program we need a compiler like <strong>GCC Compiler</strong> on linux.
+Test if it has been installed by using the following command:</p>
+<pre><code class="hljs css language-terminal"><span class="hljs-meta"><span class="hljs-meta-keyword">$gcc</span> --version</span>
+</code></pre>
+<p><img src="/course-docs/docs/assets/gcc-version.png" alt="GCC Compiler"></p>
+<ol>
+<li><p>First step is to compile the above written palindrome C program:</p>
+<pre><code class="hljs css language-terminal"><span class="hljs-variable">$gcc</span> palindrome<span class="hljs-selector-class">.c</span> -o palindrome<span class="hljs-selector-class">.o</span>
+</code></pre>
+<ul>
+<li>Here, <strong>palindrome.c</strong> is the C file, and <strong>gcc</strong> command is used for compilation</li>
+<li>we're passing the compiled output to be stored in a <strong>object file or binary file</strong> called <strong>palindrome.o</strong></li>
+<li>the above step of outputing the compiled program is done by passing the option <strong>&quot;-o&quot;</strong></li>
+</ul></li>
+<li><p>In the second step use the <strong>object file</strong> created i.e., <strong>palindrome.o</strong> to execute the compiled program:</p>
+<pre><code class="hljs css language-terminal">$./palindrome.o
+</code></pre>
+<p>Here <strong>&quot;./&quot;</strong> is prefixed to the object code file to run it</p>
+<p><img src="/course-docs/docs/assets/palindrome-execution.png" alt="Palindrome Execution"></p></li>
+</ol>
+<hr>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/course-docs/docs/resources"><span class="arrow-prev">← </span><span>Resources</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#text-editors-and-ides">Text Editors and IDEs</a></li><li><a href="#using-vim">Using VIM</a><ul class="toc-headings"><li><a href="#installing--verifying-vim">Installing &amp; Verifying VIM</a></li><li><a href="#how-to-navigate-in-vim">How to Navigate in VIM.</a></li><li><a href="#four-major-vim-modes">Four Major VIM modes:</a></li></ul></li><li><a href="#writing-a-bash-script">Writing a Bash Script</a><ul class="toc-headings"><li><a href="#how-to-write-a-bash-script">How to write a bash script</a></li><li><a href="#bash-script-to-retrieve-data-about-indias-current-covid-19-cases">Bash Script to Retrieve Data About India's Current COVID-19 Cases</a></li></ul></li><li><a href="#writing-a-c-file-and-executing-it-using-gcc-compiler">Writing a C File and Executing it Using GCC Compiler</a><ul class="toc-headings"><li><a href="#heres-a-palindrome-program-in-c">Here's a Palindrome Program in C:</a></li><li><a href="#steps-to-compile--execute-the-c-program">Steps to Compile &amp; Execute the C Program</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/course-docs/" class="nav-home"></a><div><h5>Community</h5><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Discord</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2020 Lyceum</section></footer></div></body></html>
