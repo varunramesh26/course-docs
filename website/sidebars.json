@@ -2,7 +2,8 @@
   "docs": {
     "Coursework": ["coursework"],
     "Contents": ["contents"],
-    "Resources": ["resources"]
+    "Resources": ["resources"],
+    "Working With Editors": ["week3"]
   },
   "docs-other": {
     "First Category": ["", ""]
